@@ -44,7 +44,7 @@ public class ArrayUtils{
         //TODO
         int newLength = a.length + b.length;
         int n = a.length;
-        int[] arr = new int[] {0};
+        int[] arr = new int[newLength];  //此时应该要动态初始化数组
         for(int i = 0; i < newLength; i++){
             if(i < n){
                 arr[i] = a[i];
@@ -53,7 +53,7 @@ public class ArrayUtils{
                 arr[i] = b[i-n];
             }
         }
-        return int[] arr;
+        return  arr;
     }
 
     //5.数组截取
@@ -61,8 +61,15 @@ public class ArrayUtils{
     // A {1,3,5,7,9} ->(A,1,3) > {3,5}
     public static int[] arraySub(int[] data, int start , int end){
         //TODO
-
-        return null;
+        int n = end - start;
+        int[] arr = new int [n];
+        int i = 0;
+        while(start < end){
+            arr[i] = data[start];
+            start++;
+            i++;
+        }
+        return arr;
     }
     
     //6.数组打印
@@ -94,16 +101,25 @@ public class ArrayUtils{
     }
     
     public static void main(String[] args){
-        int[] arr = new int[] {1,2,3,4,5,6,7,8,9,10};
+        int[] arr0 = new int[] {1,2,3,4,5,6,7,8,9,10};
         int[] arr2 = new int[] {11,12,13,14,15,16};
        // System.out.println(arrayMaxElement(arr));      
        //System.out.println(arrayMinElement(arr));
        //System.out.println(arrayElementSum(arr));
        //printArray(arr);    
        //printReversal(arr);
-       int[] arr1 =  arrayJoin(arr,arr2);
+       /*
+       int[] arr1 = null;  // int[] arr1 = new int[] {};
+       arr1 = arrayJoin(arr0,arr2);
        for(int a : arr1){
-        System.out.println(a);
-       }
+            System.out.println(a);
+        }
+        //arraySub(arr0, 3, 6);
+        */
+        int[] arr3 = new int[] {};
+        arr3 = arraySub(arr0, 3, 6);
+        for(int a : arr3){
+            System.out.println(a);
+        }
     }
 }
