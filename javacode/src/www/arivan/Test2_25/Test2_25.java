@@ -14,6 +14,7 @@ public class Test2_25 {
 //        }
         Selection selection = new Selection();
         System.out.println(selection.selectionProblem(arr, n));
+
     }
 }
 
@@ -37,6 +38,7 @@ class Selection {
         }
     }
 }
+
 
 //class Selection {
 //
