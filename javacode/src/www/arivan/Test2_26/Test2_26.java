@@ -1,7 +1,8 @@
-package www.arivan.Test2_26;
+﻿package www.arivan.Test2_26;
 import java.util.Scanner;
 
 // 单例设计模式
+
 
 public class Test2_26 {
     public static void main(String[] args){
