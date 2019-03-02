@@ -60,6 +60,7 @@ class Solution {
 
 class Solution1 {
     //给定一个大小为 n 的数组，找到其中的众数。众数是指在数组中出现次数大于 ⌊ n/2 ⌋ 的元素。
+    
     public int majorityElement(int[] nums) {
         int count = 1;
         int maj = nums[0];
