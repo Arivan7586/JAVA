@@ -38,6 +38,7 @@ public class practice5_4 {
 }
 
 class Solution {
+
     /**
      * 验证外星语词典
      * 某种外星语也使用英文小写字母，但可能顺序 order 不同。
