@@ -21,7 +21,6 @@ public class practice5_19 {
         System.out.println(solution2.isContinuous(new int[]{1,2,3,4,5}));
         System.out.println(solution2.isContinuous(new int[]{1,0,0,1,0}));
 
-
     }
 }
 
