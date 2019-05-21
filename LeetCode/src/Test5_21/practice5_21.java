@@ -10,7 +10,7 @@ public class practice5_21 {
 //        main.test();
 
         Finder finder = new Finder();
-        System.out.println(finder.findKth(new int[]{1,3,5,2,6},5,3));
+        System.out.println(finder.findKth(new int[]{1, 3, 5, 2, 6}, 5, 3));
     }
 }
 
@@ -57,6 +57,14 @@ class Main {
 }
 
 class Finder {
+    /**
+     * 在给定数组中找到第K大的数
+     *
+     * @param a 给定数组
+     * @param n
+     * @param K 给定的k值
+     * @return 返回第k大的数
+     */
     public int findKth(int[] a, int n, int K) {
         // write code here
 //        Arrays.sort(a);
@@ -65,47 +73,19 @@ class Finder {
     }
 
     private int partition(int[] arr, int l, int r, int k) {
-//        int result;
-//        int link = findIndex(arr, l, r);
-//        if(link+1 == k) {
-//            result =  arr[link];
-//        } else if( link + 1 < k) {
-//            result = partition(arr, link+1, r,k);
-//        } else {
-//            result=  partition(arr,l, link-1, k);
-//        }
-//        return result;
-
         int index = findIndex(arr, l, r);
         int res = 0;
         if (index + 1 > k) {
-            res = partition(arr, l,index - 1, k);
+            res = partition(arr, l, index - 1, k);
         } else if (index + 1 < k) {
-           res =  partition(arr, index + 1, r, k);
+            res = partition(arr, index + 1, r, k);
         } else {
-            res =  arr[index];
+            res = arr[index];
         }
         return res;
     }
 
     private int findIndex(int[] arr, int l, int r) {
-//        int pivot = arr[r];
-//        int i = l;
-//        int j = l;
-//        for(; j< r; j++) {
-//            if(arr[j] > pivot)     {
-//                if( i == j) {
-//                    i++;
-//                }
-//                else {
-//                    swap(arr, i, j);
-//                    i++;
-//                }
-//            }
-//        }
-//        swap(arr, i, r);
-//        return i;
-
         int randomIndex = (int) (Math.random() * (r - l + 1) + l);
         int value = arr[randomIndex];
         swap(arr, l, randomIndex);
@@ -113,12 +93,12 @@ class Finder {
         int j = l;
         while (i <= r) {
             if (arr[i] > value) {
-                swap(arr,i,j+1);
+                swap(arr, i, j + 1);
                 j++;
             }
             i++;
         }
-        swap(arr,l,j);
+        swap(arr, l, j);
         return j;
     }
 
